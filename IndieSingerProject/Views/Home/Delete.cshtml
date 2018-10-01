@@ -1,0 +1,59 @@
+﻿@model IndieSingerProject.Models.Singer
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+<div class="tableFont blackBg whiteText container">
+    <h2>Delete</h2>
+    <hr />
+    <br /><br />
+    <h3>Are you sure you want to delete this?</h3><br /><br />
+
+
+
+    <div class="col-md-6 ">
+        <dl class="dl-horizontal">
+            <dt>@Html.DisplayNameFor(s => s.Name)</dt>
+            <dd>@Html.DisplayFor(s => s.Name)<br /><br /></dd>
+
+            <dt>@Html.DisplayNameFor(s => s.Nationality)</dt>
+            <dd>@Html.DisplayFor(s => s.Nationality)<br /><br /></dd>
+
+            <dt>@Html.DisplayNameFor(s => s.Genre)</dt>
+            <dd>@Html.DisplayFor(s => s.Genre)<br /><br /></dd>
+
+            <dt>@Html.DisplayNameFor(s => s.Biography)</dt>
+            <dd>@Html.DisplayFor(s => s.Biography)<br /><br /></dd>
+
+
+        </dl>
+
+    </div>
+
+    <div class="col-md-6 ">
+        <iframe width="500" height="315" src="@Model.VideoUrl"></iframe>
+    </div>
+
+
+
+
+    
+    @using (Html.BeginForm())
+    {    
+        <div class="col-md-12">
+            <br/>
+            <input type="submit" value="Delete" class="btn btn-default" />
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+
+        </div>
+    }
+
+
+</div>
+
+
+
+

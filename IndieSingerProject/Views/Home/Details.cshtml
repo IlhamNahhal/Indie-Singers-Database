@@ -1,0 +1,49 @@
+﻿@model IndieSingerProject.Models.Singer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div class="tableFont blackBg whiteText container">
+
+
+    <h2 class="detailsHeading">Details</h2>
+    <hr/>
+    <div class="DetailsfirstRaw raw">
+        
+
+        <div class="detail-list col-md-6 ">
+            <dl class="dl-horizontal">
+                <dt>@Html.DisplayNameFor(s => s.Name):</dt>
+                <dd>@Html.DisplayFor(s => s.Name) <br /><br /></dd>
+
+                <dt>@Html.DisplayNameFor(s => s.Nationality):</dt>
+                <dd>@Html.DisplayFor(s => s.Nationality)<br /><br /></dd>
+
+                <dt>@Html.DisplayNameFor(s => s.Genre):</dt>
+                <dd>@Html.DisplayFor(s => s.Genre)<br /><br /></dd>
+
+                <dt>@Html.DisplayNameFor(s => s.Biography):</dt>
+                <dd>@Html.DisplayFor(s => s.Biography)<br /><br /></dd>
+
+
+            </dl>
+        </div>
+
+        <div class="col-md-6">
+            <iframe width="500" height="315" src="@Model.VideoUrl"></iframe>
+        </div>
+      
+    </div>
+
+
+    <div class="raw">
+      <div class="col-md-12">
+          <br />
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" }) |
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" }) |
+        @Html.ActionLink("Delete", "Delete", new { id = Model.Id }, new { @class = "btn btn-default" })
+      </div>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+﻿@model IEnumerable<IndieSingerProject.Models.Singer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="container tableFont">
+
+
+    <div class="indexHeading text-center">
+        <h1 class="headingFont">Indie Singers Database</h1>
+    </div>
+
+    <div class="row">
+
+
+        <div class="col-sm-5">
+            @using (Html.BeginForm())
+            {
+                <p>
+                    Genre @Html.DropDownList("singerGenre", "All")
+                    Singer @Html.TextBox("SearchString")
+                    <input type="submit" value="Search" class="btn btn-default tableFont" />
+                </p>
+            }
+
+        </div>
+        <div class="col-sm-offset-5 col-sm-2">
+            @Html.ActionLink("Add a new singer", "Create", null, new { @class = "add btn btn-default" }) <br /><br />
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="indexBlack blackBg">
+            <table class="table tableFont whiteText">
+
+
+
+                @foreach (var item in Model)
+
+            {
+                    <tr>
+
+
+                        <td>
+                            <a href="@Url.Action("Details", new {id = item.Id })">
+                                <img src="@Url.Content(item.PictureUrl)" height="100" width="90" />
+                            </a>
+                        </td>
+
+                        <td><a class="whiteText singerName " href="@Url.Action("Details", new {id = item.Id })">@Html.DisplayFor(s => item.Name)</a></td>
+
+                        <td>@Html.DisplayFor(s => item.Nationality)</td>
+
+                        <td>@Html.DisplayFor(s => item.Genre)</td>
+
+                        <td>
+                            @Html.DisplayFor(s => item.Likes)
+                            <i class="fas fa-thumbs-up"></i>
+                        </td>
+
+                        <td>@Html.ActionLink("Like", "Like", new { item.Id }, new { @class = "btn btn-default tableFont" })</td>
+
+                        <td>
+                            @Html.DisplayFor(s => item.Dislikes)
+                            <i class="fas fa-thumbs-down"></i>
+                        </td>
+
+                        <td>@Html.ActionLink("Dislike", "Dislike", new { item.Id }, new { @class = "btn btn-default tableFont" })</td>
+
+
+                    </tr>
+                }
+
+
+            </table>
+        </div>
+
+    </div>
+</div>
+
+
+

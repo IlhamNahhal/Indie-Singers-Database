@@ -1,0 +1,75 @@
+﻿.detail-list 
+ {  
+    padding-left: 50px;
+    padding-right: 30px;
+}
+.DetailsfirstRaw{   
+   
+    margin-top: 50px;
+    margin-bottom: 150px;
+}
+
+.createfirstraw{
+    margin-bottom: 30px;
+}
+
+
+.indexHeading  {
+    position:relative;
+    margin-bottom:50px;
+    z-index:2000;
+
+}
+
+body {
+    background-image: url('BG7.jpg');
+    color: rgb(0, 0, 0);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+
+
+.container{
+    position:relative;
+     z-index :3000;
+
+}
+.blackBg{
+    
+    background-color:rgba(0,0,0,0.4);
+    position:relative;
+    margin-bottom:30px;
+    padding-bottom:20px;
+   
+   
+}
+
+.whiteText{
+    color: rgb(255, 255, 255);
+}
+
+
+
+.tableFont{
+ font-size:16px;
+font-family: 'Exo 2', sans-serif;
+}
+
+.headingFont {
+  color:#333232;
+    font-size: 50px;
+    font-weight:bold;
+    text-shadow: 3px 3px 3px white;
+}
+
+.indexBlack{ padding-bottom: 0px;}
+
+.add{font-size:16px;}
+
+.singerName{text-decoration-line:underline;
+            
+}
